@@ -6,10 +6,12 @@
     },
     {
         "title":"Pele",
-        "text":"A brazilian football player often considered as the GOAT."
+        "text":"A brazilian football player often considered as the GOAT.",
+        "id": 2
     },
     {
         "title":"Yaya Toure",
-        "text":"This guy was a machine. From Ivory Coast, the midfield was his kingdom."
+        "text":"This guy was a machine. From Ivory Coast, the midfield was his kingdom.",
+        "id": 3
     }
 ]

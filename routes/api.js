@@ -1,9 +1,7 @@
 const notes = require('express').Router();
-// const path = require('path');
 const fs = require('fs');
-const uuid = require('uuid');
 const util = require('util');
-
+const uuid = require('uuid');
 
 // let input = require('../db/db.json');
 const readFromFile = util.promisify(fs.readFile);
@@ -17,6 +15,11 @@ notes.get('/notes', (req, res) => {
 });
 
 // POST Route for new note
+notes.post('/notes', (req, res) => {
+    console.log(req.body)
+
+    // const 
+});
 
 
 
