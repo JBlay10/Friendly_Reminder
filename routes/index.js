@@ -1,11 +1,17 @@
-const express = require('express');
+const index = require('express').Router();
+const path = require('path');
 
-// Import our modular routers for /api
-const apiRouter = require('./api');
+// const apiRouter = require('./api');
 
-const app = express();
+// GET Route for index and notes (html)
 
-app.use('/api', apiRouter);
+index.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
+});
 
-module.exports = app;
+index.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/notes.html'))
+});
+
+module.exports = index;
 
