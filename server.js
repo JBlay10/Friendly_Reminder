@@ -14,7 +14,7 @@ app.use(express.static('public'));
 app.use('/api', notes);
 app.use('/', index);
 
-// Listen function for console notification
+// Listen for console notification
 app.listen(PORT, () => {
     console.log(`Now listening http://localhost:${PORT}`)
 });
