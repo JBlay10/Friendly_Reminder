@@ -27,14 +27,14 @@ notes.post('/notes', (req, res) => {
             text,
             id: uuid.v4()
         };
-        fs.writeFileSync('./db/db.json', (err, data) => {
+        fs.writeFile('./db/db.json', (err, data) => {
             if (err){
                 console.log(err)
             }else {
                 const pData = JSON.parse(data);
                 pData.push(newNote);
 
-                fs.writeFileSync('./db/db.json', JSON.stringify(pData), (err) => {
+                fs.writeFile('./db/db.json', JSON.stringify(pData), (err) => {
                     if (err){
                         console.log(err)
                     }else {
