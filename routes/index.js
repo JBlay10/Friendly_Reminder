@@ -9,9 +9,9 @@ index.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/notes.html'))
 });
 
-// index.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../public/index.html'))
-// });
+index.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
+});
 
 module.exports = index;
 

@@ -18,7 +18,32 @@ notes.get('/notes', (req, res) => {
 notes.post('/notes', (req, res) => {
     console.log(req.body)
 
-    // const 
+    const { title, text } = req.body;
+
+    // if statement with if else statement for new note and message for added note
+    if (req.body) {
+        const newNote = {
+            title,
+            text,
+            id: uuid.v4()
+        };
+        fs.writeFile('./db/db.json', 'utf8', (err, data) => {
+            if (err){
+                console.log(err)
+            }else {
+                const pData = JSON.parse(data);
+                pData.push(newNote);
+
+                fs.writeFile('./db/db.json', JSON.stringify(pData), (err) => {
+                    if (err){
+                        console.log(err)
+                    }else {
+                        console.log('New note added!')
+                    }
+                })
+            }
+        })
+    }
 });
 
 
