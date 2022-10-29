@@ -31,10 +31,10 @@ notes.post('/notes', (req, res) => {
             if (err){
                 console.log(err)
             }else {
-                const pData = JSON.parse(data);
-                pData.push(newNote);
+                const parsedData = JSON.parse(data);
+                parsedData.push(newNote);
 
-                fs.writeFile('./db/db.json', JSON.stringify(pData), (err) => {
+                fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err) => {
                     if (err){
                         console.log(err)
                     }else {
