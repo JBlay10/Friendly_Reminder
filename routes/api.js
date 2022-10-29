@@ -27,7 +27,7 @@ notes.post('/notes', (req, res) => {
             text,
             id: uuid.v4()
         };
-        fs.writeFile('./db/db.json', (err, data) => {
+        fs.readFile('./db/db.json', (err, data) => {
             if (err){
                 console.log(err)
             }else {
@@ -45,6 +45,8 @@ notes.post('/notes', (req, res) => {
         })
     }
 });
+
+// Delete notes
 
 
 
